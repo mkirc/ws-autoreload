@@ -100,7 +100,7 @@ def get_args():
         nargs='*',
         action='extend',
         dest='hosts',
-        help='Allowed hosts for websocket server (leave empty for allowing all).'
+        help='Allowed hosts for websocket server ('' for allowing all).'
     )
     parser.add_argument('--port', type=int, default=5001, help='Port for the websocket server.')
 

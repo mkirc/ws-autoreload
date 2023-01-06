@@ -6,7 +6,7 @@ the browser.
 ## Installation
 
 Clone this repository, install packages via `pip install -r requirements.txt`,
-add 'autoreload.js' to the .html you want to reload and go crackin'.
+add 'autoreload.js' to the .html you want to reload and get crackin'.
 
 ## Usage
 ```
@@ -26,10 +26,15 @@ optional arguments:
   -h, --help            show this help message and exit
   --pattern [RELOAD_PATTERNS ...]
                         Pattern to be watched, defaults to *.html
-  --host [HOSTS ...]    Allowed hosts for websocket server (leave empty for
+  --host [HOSTS ...]    Allowed hosts for websocket server ('' for
                         allowing all).
   --port PORT           Port for the websocket server.
 ```
 
-The 'autoreload.js' script tries to connect to localhost:5001, so keep
+## Notes
+
+* The 'autoreload.js' script tries to connect to localhost:5001, so keep
 in mind to adjust the port there as well.
+
+* You can adjust the verbosity of the server by modifying the loglevel in
+'autoreload.py'. Setting it to `CRITICAL` effectively mutes output to stdout.
