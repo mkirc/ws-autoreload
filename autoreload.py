@@ -35,7 +35,7 @@ class FileModifiedHandler(PatternMatchingEventHandler):
         self.filesChanged = filesChanged
         self.last_updated_at = time.time()
 
-    def on_any_event(self, event):
+    def on_closed(self, event):
         """fill queue for consumption by websocket server"""
 
         if time.time() - self.last_updated_at > DEBOUNCE_SECONDS:
