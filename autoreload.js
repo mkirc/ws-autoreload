@@ -1,5 +1,8 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const websocket = new WebSocket("ws://localhost:5001/");
+  if (typeof wsPort === 'undefined') {
+    let wsPort = 5001
+  }
+  const websocket = new WebSocket("ws://localhost:" + wsPort + "/");
   sendReady(websocket);
   receiveFilechange(websocket);
 });
@@ -18,7 +21,7 @@ function receiveFilechange(websocket) {
         // refresh page 
         console.log(event.path);
         if (window.location.pathname == event.path) {
-            console.log('paths are same')
+            // console.log('paths are same')
             websocket.close(1000)
             window.location.reload();
         }
